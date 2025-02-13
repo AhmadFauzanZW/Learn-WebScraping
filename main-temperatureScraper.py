@@ -1,6 +1,5 @@
 import functions
 import time
-import streamlit as st
 
 URL = "https://programmer100.pythonanywhere.com/"
 DATA_STORE = 'data-temp.txt'
