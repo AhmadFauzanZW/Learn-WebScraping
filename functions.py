@@ -1,10 +1,10 @@
 import requests as req
 import selectorlib
-import time
 
 URL = "https://programmer100.pythonanywhere.com/tours/"
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+
 
 def scrape(url):
     """Fungsi untuk scraping page source dari URL"""
@@ -27,17 +27,3 @@ def read(extracted):
 
 def send_mail():
     print("Email berhasil dikirim!")
-
-if __name__ == "__main__":
-    while True:
-        scraped = scrape(URL)
-        extracted = extract(scraped)
-        print(extracted)
-
-        content = read(extracted)
-        if extracted != "No upcoming tours":
-            if extracted not in content:
-                store(extracted)
-                send_mail()
-        time.sleep(5)
-
